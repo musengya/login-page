@@ -30,6 +30,11 @@ class App extends React.Component {
                     error: "Password is required"
                 });
         }
+        if ((!this.state.username) && (!this.state.password)) {
+                return this.setState({
+                    error: "Username and password required"
+                });
+        }
         return this.setState({
             error: ""
         });
@@ -39,7 +44,7 @@ class App extends React.Component {
             username: e.target.value
         });
     }
-
+  
     handlePassChange(e) {
         this.setState({
             password: e.target.value
@@ -50,7 +55,9 @@ class App extends React.Component {
             <div className="App">
                 <h2 >Login Page</h2>
                 <form onSubmit={this.handleSubmit}> 
-                    <h2><button onClick={this.dismissError}>x</button>{this.state.error}</h2>  
+                    {
+                        this.state.error &&
+                        <h2><button onClick={this.dismissError}>x</button>{this.state.error}</h2>}
                     <label>Username</label>
                     <input
                         type="text"
