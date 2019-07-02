@@ -50,6 +50,7 @@ class App extends React.Component {
             <div className="App">
                 <h2 >Login Page</h2>
                 <form onSubmit={this.handleSubmit}> 
+                    <h2><button onClick={this.dismissError}>x</button>{this.state.error}</h2>  
                     <label>Username</label>
                     <input
                         type="text"
