@@ -8,6 +8,15 @@ class App extends React.Component {
             password: "",
             error: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUserChange = this.handleUserChange.bind(this);
+        this.handlePassChange = this.handlePassChange.bind(this);
+        this.dismissError = this.dismissError.bind(this);
+    }
+    dismissError() {
+        this.setState({
+            error: ""
+        });
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -65,4 +74,5 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default App; 
+
