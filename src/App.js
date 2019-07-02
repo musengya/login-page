@@ -68,8 +68,10 @@ class App extends React.Component {
                         onChange={this.handlePassChange} />
                     <br /> <br />
                     <input
+                        test-id="log-in"
                         type="submit"
-                        value="Log In" />
+                        value="Log In"
+                    />
                 </form>
             </div>
 
