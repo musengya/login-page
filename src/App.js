@@ -46,8 +46,7 @@ class App extends React.Component {
         });
     }
     render() {
-        const { username, password } = this.state;
-        const buttonDisabled = !username || !password;
+        
         return (
             <div className="App">
                 <h2 >Login Page</h2>
@@ -74,7 +73,6 @@ class App extends React.Component {
                     <input
                         data-testid="login-button"
                         type="submit"
-                        disabled={buttonDisabled}
                         value="Log In"
                     />
                 </form>
