@@ -1,22 +1,29 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import App from "./App";
 
+afterEach(cleanup);
 describe("App", () => {
-    test.skip("displays correct title", () => {
+    test("displays correct title", () => {
         const { getByText } = render(<App />);
 
         expect(getByText("Login Page")).toBeDefined();
     });
 
-    test.skip("displays all form inputs", () => {
+    test("displays all form inputs", () => {
         const { getByText } = render(<App />);
 
         expect(getByText("Username")).toBeDefined();
         expect(getByText("Password")).toBeDefined();
     });
+    test.skip("displays an error when no value is input", () => {
+       
+      });
+
+    });
+      
    
-});
+   
 
 
 
