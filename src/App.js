@@ -46,6 +46,8 @@ class App extends React.Component {
         });
     }
     render() {
+        const { username, password } = this.state;
+        const buttonDisabled = !username || !password;
         return (
             <div className="App">
                 <h2 >Login Page</h2>
@@ -56,6 +58,7 @@ class App extends React.Component {
                     <label>Username</label>
                     <input
                         type="text"
+                        data-testid="user-input"
                         placeholder="Enter your username"
                         value={this.state.username}
                         onChange={this.handleUserChange} />
@@ -63,13 +66,15 @@ class App extends React.Component {
                     <label>Password</label>
                     <input
                         type="password"
+                        data-testid="pass-input"
                         placeholder="Type your password"
                         value={this.state.password}
                         onChange={this.handlePassChange} />
                     <br /> <br />
                     <input
-                        test-id="log-in"
+                        data-testid="login-button"
                         type="submit"
+                        disabled={buttonDisabled}
                         value="Log In"
                     />
                 </form>
